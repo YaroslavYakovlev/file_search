@@ -15,16 +15,12 @@ int main(){
   if(word){
     while(!word.eof()){
         word >> str;
-        list.push_back(str);
-    }
-    for(int i = 0; i < list.size(); ++i){
-      if(searchWord == list[i]){
-        countWord++;
-        list[i] = str;
-      }
+        if(searchWord == str){
+          countWord++;
+        }
     }
     if(countWord > 0){
-      std::cout << "Word found - " << str << std::endl << "Number of repetitions: " <<  countWord;
+      std::cout << "Word found - " << searchWord << std::endl << "Number of repetitions: " <<  countWord;
     }else{
        std::cout << "The word was not found." << std::endl << "Number of repetitions: " <<  countWord;
     }
