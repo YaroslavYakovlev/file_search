@@ -11,7 +11,7 @@ int main(){
   int countWord = 0;
 
   std::cin >> searchWord;
-  word.open("..\\src\\File\\word1s.txt");
+  word.open("..\\src\\File\\words.txt");
   if(word){
     while(!word.eof()){
         word >> str;
