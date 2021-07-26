@@ -11,22 +11,26 @@ int main(){
   int countWord = 0;
 
   std::cin >> searchWord;
-  word.open("D:\\ProjectCPP\\Module19\\file_search\\src\\File\\words.txt");
-  while(!word.eof()){
-      word >> str;
-      list.push_back(str);
-  }
-  for(int i = 0; i < list.size(); ++i){
-    if(searchWord == list[i]){
-      countWord++;
-      list[i] = str;
+  word.open("..\\src\\File\\word1s.txt");
+  if(word){
+    while(!word.eof()){
+        word >> str;
+        list.push_back(str);
     }
-  }
+    for(int i = 0; i < list.size(); ++i){
+      if(searchWord == list[i]){
+        countWord++;
+        list[i] = str;
+      }
+    }
     if(countWord > 0){
       std::cout << "Word found - " << str << std::endl << "Number of repetitions: " <<  countWord;
     }else{
        std::cout << "The word was not found." << std::endl << "Number of repetitions: " <<  countWord;
     }
+  }else{
+    std::cout << "File not found" << std::endl;
+  }
   word.close();
   
   return 0;
